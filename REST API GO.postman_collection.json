@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "786a7860-00a2-4ce5-bcdf-ae55f8aef959",
+		"name": "REST API GO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19158254"
+	},
+	"item": [
+		{
+			"name": "[POST] Add Order",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderedAt\": \"2021-10-06T16:53:27.675931+07:00\",\r\n    \"customerName\": \"Raihan\",\r\n    \"items\":[\r\n        {\r\n            \"itemCode\": \"Item1\",\r\n            \"description\": \"ItemDescription\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"itemCode\": \"Item2\",\r\n            \"description\": \"ItemDescription\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "[PUT] Edit Order Data",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderedAt\": \"2022-03-12T08:00:00Z\",\r\n    \"customerName\": \"Updated Customer\",\r\n    \"items\":[\r\n        {\r\n            \"itemCode\": \"NewCode\",\r\n            \"description\": \"New Description\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"itemCode\": \"AnotherNewCode\",\r\n            \"description\": \"Another New Description\",\r\n            \"quantity\": 3\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/orders/2"
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] Get All Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "[DELETE] Delete Order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/orders/2"
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] Get by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/orders/3"
+			},
+			"response": []
+		}
+	]
+}
